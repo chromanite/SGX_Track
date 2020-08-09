@@ -54,11 +54,11 @@ const screenshot = () => {
     )
 }
 
-const startDay = schedule.scheduleJob('40 20 * * *', () => {
+const startDay = schedule.scheduleJob('40 20 * * 1-5', () => {
     i = 0;
     console.log('startDay is running...');
     screenshot();
-    schedule.scheduleJob('*/1 * * * *', () => screenshot());
+    schedule.scheduleJob('*/1 * * * 1-5', () => screenshot());
 });
 
 schedule.scheduleJob('40 22 * * *', () => {
