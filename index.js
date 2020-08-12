@@ -58,10 +58,10 @@ const startDay = schedule.scheduleJob('40 20 * * 1-5', () => {
     i = 0;
     console.log('startDay is running...');
     screenshot();
-    schedule.scheduleJob('*/1 * * * 1-5', () => screenshot());
+    schedule.scheduleJob('*/30 * * * *', () => screenshot());
 });
 
-schedule.scheduleJob('40 22 * * *', () => {
+schedule.scheduleJob('40 22 * * 1-5', () => {
     console.log('Jobs finished running. Rescheduling...');
     startDay.cancel(true);
 })
